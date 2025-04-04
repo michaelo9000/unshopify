@@ -1,0 +1,10 @@
+definite
+- weight more common words to appear more often
+- auto-hide history items older than the last
+
+probably
+- prompt a certain tense to be used
+
+nicety
+- check that each prompted word has been utilised
+- autocomplete for words

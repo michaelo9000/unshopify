@@ -1,0 +1,222 @@
+/* Override stuff */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root, .App {
+  height:100%;
+}
+
+p {
+  margin:0 0 10px;
+  padding:0;
+}
+
+/* Vars */
+
+:root {
+  /* UI/control vars */
+  --input-width: 400px;
+  /* color vars */
+  --warning-color: rgb(195, 33, 33);
+  --main-color:rgb(39, 190, 155);
+  --accent-color: rgb(42, 133, 165);
+  --text-color: white;
+}
+
+/* Template stuff */
+
+.App {
+  position: relative;
+  width:100%;
+  max-width: 450px;
+  padding:45px 20px 80px 20px;
+  background-color: var(--main-color);
+  overflow: hidden;
+  color:var(--text-color);
+}
+a {
+  color: var(--text-color);
+}
+
+.header-control {
+  font-size: 24px;
+  border:1px solid white;
+  border-radius: 50%;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:100%;
+  height:80px;
+  padding:0 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+}
+.nav-item {
+  height:100%;
+  width:80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+}
+.nav-item.active {
+  background-color: var(--accent-color);
+}
+.nav-item.add {
+  background-image: url("./img/add.svg");
+}
+.nav-item.add.active {
+  background-image: url("./img/add-active.svg");
+}
+.nav-item.list {
+  background-image: url("./img/cart.svg");
+}
+.nav-item.list.active {
+  background-image: url("./img/cart-active.svg");
+}
+.nav-item.summary {
+  background-image: url("./img/summary.svg");
+}
+.nav-item.summary.active {
+  background-image: url("./img/summary-active.svg");
+}
+
+/* UI stuff */
+
+input, select, button {
+  height:30px;
+  max-width: 100%;
+  margin:0 0 10px;
+  border: 3px solid white;
+}
+input {
+  padding: 0 5px;
+}
+input {
+  width:var(--input-width);
+}
+select {
+  width: var(--input-width);
+}
+select.mini {
+  width: 80px;
+}
+button {
+  width: var(--input-width);
+}
+
+.pointer, button, .nav-item, .header-control {
+  cursor: pointer;
+  min-width:30px;
+  min-height:30px;
+}
+
+button {
+  background-color: var(--accent-color);
+  color:white;
+  font-weight: bold;
+}
+
+/* Text stuff */
+
+.text-clickable {
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-10 {
+  margin-top:10px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+/* Layout stuff */
+
+.page-body {
+  height: 100%;
+  padding: 15px 0;
+  overflow: auto;
+}
+
+.content-row {
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-row.around {
+  justify-content: space-around;
+}
+.content-row.header {
+  position:absolute;
+  top:0;
+  left:0;
+  height:45px;
+  padding:5px 20px;
+  background-color: var(--accent-color);
+}
+.content-row.header.error-banner {
+  background-color: var(--warning-color);
+}
+
+/* List page stuff */
+
+.item {
+  border-bottom: 2px solid white;  
+}
+
+.item:not(:first-of-type){
+  margin-top: 15px;
+}
+
+.item-description {
+  font-style: italic;
+}
+
+.item-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item-buttons-container form {
+  width: 110px;
+}
+.item-buttons-container form.icon {
+  width:45px;
+}
+.item-buttons-container form.icon button {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+}
+button.delete {
+  background-image: url("./img/bin.svg");
+}
+button.edit {
+  background-image: url("./img/edit.svg");
+}
