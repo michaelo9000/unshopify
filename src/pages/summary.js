@@ -8,15 +8,15 @@ export default function Summary(props){
         return <></>
 
     let spent = items
-        .filter(i => i.bought === true)
+        .filter(i => i.bought)
         .reduce((sum, i) => sum + i.cost*1, 0);
 
     let saved = items
-        .filter(i => i.archived === true)
+        .filter(i => i.archived)
         .reduce((sum, i) => sum + i.cost*1, 0);
 
     let outstanding = items
-        .filter(i => i.bought === false && i.archived === false)
+        .filter(i => !i.bought && !i.archived)
         .reduce((sum, i) => sum + i.cost*1, 0);
     
     return <div className="page-body">
